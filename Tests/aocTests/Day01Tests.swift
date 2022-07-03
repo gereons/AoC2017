@@ -10,7 +10,10 @@ final class Day01Tests: XCTestCase {
     }
 
     func testDay01_2() throws {
-        let day = Day01(input: "bar")
-        XCTAssertEqual(day.part2(), 0)
+        XCTAssertEqual(Day01(input: "1212").part2(), 6)
+        XCTAssertEqual(Day01(input: "1221").part2(), 0)
+        XCTAssertEqual(Day01(input: "123425").part2(), 4)
+        XCTAssertEqual(Day01(input: "123123").part2(), 12)
+        XCTAssertEqual(Day01(input: "12131415").part2(), 4)
     }
 }
