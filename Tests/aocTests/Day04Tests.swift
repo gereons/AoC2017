@@ -3,12 +3,24 @@ import XCTest
 
 final class Day04Tests: XCTestCase {
     func testDay04_1() throws {
-        let day = Day04(input: "foo")
-        XCTAssertEqual(day.part1(), 0)
+        let input = """
+            aa bb cc dd ee
+            aa bb cc dd aa
+            aa bb cc dd aaa
+            """
+        let day = Day04(input: input)
+        XCTAssertEqual(day.part1(), 2)
     }
 
     func testDay04_2() throws {
-        let day = Day04(input: "bar")
-        XCTAssertEqual(day.part2(), 0)
+        let input = """
+            abcde fghij
+            abcde xyz ecdab
+            a ab abc abd abf abj
+            iiii oiii ooii oooi oooo
+            oiii ioii iioi iiio
+            """
+        let day = Day04(input: input)
+        XCTAssertEqual(day.part2(), 3)
     }
 }
