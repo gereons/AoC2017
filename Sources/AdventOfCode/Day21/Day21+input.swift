@@ -3,7 +3,7 @@
 //
 
 extension Day21 {
-static let input = #"""
+static let rawInput = #"""
 ../.. => .../.##/##.
 #./.. => .##/.##/#..
 ##/.. => ..#/.../###

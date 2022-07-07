@@ -71,27 +71,18 @@ private final class Spiral {
     }
 }
 
-final class Day03: Day, EmptyInput {
+final class Day03: AOCDay {
     let input: Int
-    init(input: String? = nil) {
-        self.input = Int(input ?? Self.input) ?? 0
-    }
-
-    func run() {
-        print("Solution for part 1: \(part1())")
-        print("Solution for part 2: \(part2())")
+    init(rawInput: String? = nil) {
+        self.input = Int(rawInput ?? Self.rawInput) ?? 0
     }
 
     func part1() -> Int {
-        let timer = Timer(day); defer { timer.show() }
         let point = Spiral.point(for: input)
-
         return point.distance(to: Point(0, 0))
     }
 
     func part2() -> Int {
-        let timer = Timer(day); defer { timer.show() }
-
         var memory = [Point(0, 0): 1]
 
         var index = 2

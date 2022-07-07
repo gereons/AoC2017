@@ -8,7 +8,7 @@ final class Day04Tests: XCTestCase {
             aa bb cc dd aa
             aa bb cc dd aaa
             """
-        let day = Day04(input: input)
+        let day = Day04(rawInput: input)
         XCTAssertEqual(day.part1(), 2)
     }
 
@@ -20,7 +20,7 @@ final class Day04Tests: XCTestCase {
             iiii oiii ooii oooi oooo
             oiii ioii iioi iiio
             """
-        let day = Day04(input: input)
+        let day = Day04(rawInput: input)
         XCTAssertEqual(day.part2(), 3)
     }
 }

@@ -3,7 +3,7 @@
 //
 
 extension Day04 {
-static let input = #"""
+static let rawInput = #"""
 nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
 iix ewj rojvbkk phrij iix zuajnk tadv givslju ewj bda
 isjur jppvano vctnpjp ngwzdq pxqfrk mnxxes zqwgnd giqh

@@ -3,7 +3,7 @@
 //
 
 extension Day03 {
-static let input = #"""
+static let rawInput = #"""
 361527
 """#
 }

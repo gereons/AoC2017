@@ -3,7 +3,7 @@
 //
 
 extension Day12 {
-static let input = #"""
+static let rawInput = #"""
 0 <-> 199, 1774
 1 <-> 350, 1328, 1920
 2 <-> 477, 984, 1419

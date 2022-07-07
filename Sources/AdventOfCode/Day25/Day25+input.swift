@@ -3,7 +3,7 @@
 //
 
 extension Day25 {
-static let input = #"""
+static let rawInput = #"""
 Begin in state A.
 Perform a diagnostic checksum after 12994925 steps.
 

@@ -3,7 +3,7 @@
 //
 
 extension Day08 {
-static let input = #"""
+static let rawInput = #"""
 yxr inc 119 if nev != 6
 piw dec -346 if tl != 4
 cli inc 165 if nev >= -5

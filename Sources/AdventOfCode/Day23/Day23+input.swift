@@ -3,7 +3,7 @@
 //
 
 extension Day23 {
-static let input = #"""
+static let rawInput = #"""
 set b 81
 set c b
 jnz a 2

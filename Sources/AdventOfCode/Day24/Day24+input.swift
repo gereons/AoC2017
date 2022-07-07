@@ -3,7 +3,7 @@
 //
 
 extension Day24 {
-static let input = #"""
+static let rawInput = #"""
 24/14
 30/24
 29/44

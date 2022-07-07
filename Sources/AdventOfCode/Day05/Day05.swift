@@ -6,28 +6,37 @@
 
 import AoCTools
 
-final class Day05: Day, EmptyInput {
-    let input: String
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
-    }
-
-    func run() {
-        Timer.time(day) {
-            // parse data here
-        }
-
-        print("Solution for part 1: \(part1())")
-        print("Solution for part 2: \(part2())")
+final class Day05: AOCDay {
+    let data: [Int]
+    init(rawInput: String? = nil) {
+        let input = rawInput ?? Self.rawInput
+        let lines = input.components(separatedBy: "\n")
+        data = lines.compactMap { Int($0) }
     }
 
     func part1() -> Int {
-        let timer = Timer(day); defer { timer.show() }
-        return 0
+        var memory = data
+        var pc = 0
+        var steps = 0
+        while 0..<memory.count ~= pc {
+            let move = memory[pc]
+            memory[pc] += 1
+            pc += move
+            steps += 1
+        }
+        return steps
     }
 
     func part2() -> Int {
-        let timer = Timer(day); defer { timer.show() }
-        return 0
+        var memory = data
+        var pc = 0
+        var steps = 0
+        while 0..<memory.count ~= pc {
+            let move = memory[pc]
+            memory[pc] += move >= 3 ? -1 : 1
+            pc += move
+            steps += 1
+        }
+        return steps
     }
 }

@@ -6,11 +6,11 @@
 
 import AoCTools
 
-final class Day04: Day, EmptyInput {
+final class Day04: AOCDay {
     let input: String
     let data: [[String]]
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
+    init(rawInput: String? = nil) {
+        self.input = rawInput ?? Self.rawInput
 
         var data = [[String]]()
         let lines = self.input.components(separatedBy: "\n")
@@ -21,14 +21,7 @@ final class Day04: Day, EmptyInput {
         self.data = data
     }
 
-    func run() {
-        print("Solution for part 1: \(part1())")
-        print("Solution for part 2: \(part2())")
-    }
-
     func part1() -> Int {
-        let timer = Timer(day); defer { timer.show() }
-
         var sum = 0
         for words in data {
             if words.count == Set(words).count {
@@ -39,8 +32,6 @@ final class Day04: Day, EmptyInput {
     }
 
     func part2() -> Int {
-        let timer = Timer(day); defer { timer.show() }
-
         var sum = 0
         for words in data {
             let sortedWords = words.map { $0.sorted(by: <) }

@@ -3,7 +3,7 @@
 //
 
 extension Day15 {
-static let input = #"""
+static let rawInput = #"""
 Generator A starts with 277
 Generator B starts with 349
 """#

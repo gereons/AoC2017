@@ -3,7 +3,7 @@
 //
 
 extension Day07 {
-static let input = #"""
+static let rawInput = #"""
 dihjv (2158) -> gausx, ncdmp, hozgrub
 qhvca (428) -> odttvb, ymehff, ymyzbqc, jtdtmsi, wciuyuh
 kuvqhnm (77)

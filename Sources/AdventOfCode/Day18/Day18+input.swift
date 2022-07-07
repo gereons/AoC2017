@@ -3,7 +3,7 @@
 //
 
 extension Day18 {
-static let input = #"""
+static let rawInput = #"""
 set i 31
 set a 1
 mul p 17
