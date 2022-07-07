@@ -7,16 +7,59 @@
 import AoCTools
 
 final class Day06: AOCDay {
-    let input: String
+    let input: [Int]
     init(rawInput: String? = nil) {
-        self.input = rawInput ?? Self.rawInput
+        let rawInput = rawInput ?? Self.rawInput
+        input = rawInput.components(separatedBy: .whitespaces).compactMap { Int($0) }
     }
 
+    private var solution: (steps: Int, firstSeen: Int)?
+
     func part1() -> Int {
-        return 0
+        if solution == nil {
+            solution = redistribute()
+        }
+        return solution!.steps
     }
 
     func part2() -> Int {
-        return 0
+        if solution == nil {
+            solution = redistribute()
+        }
+        return solution!.steps - solution!.firstSeen
+    }
+
+    private func redistribute() -> (Int, Int) {
+        var seen = [[Int]: Int]()
+        var blocks = input
+        seen[blocks] = 0
+        var steps = 0
+
+        while true {
+            var index = startIndex(for: blocks)
+
+            var distribute = blocks[index]
+            blocks[index] = 0
+            while distribute > 0 {
+                index += 1
+                if index >= blocks.count { index = 0 }
+                blocks[index] += 1
+                distribute -= 1
+            }
+
+            steps += 1
+            if let seenAt = seen[blocks] {
+                return (steps, seenAt)
+            } else {
+                seen[blocks] = steps
+            }
+        }
+    }
+
+    private func startIndex(for blocks: [Int]) -> Int {
+        let max = blocks.enumerated().max { e1, e2 in
+            e1.element < e2.element
+        }
+        return max!.offset
     }
 }
