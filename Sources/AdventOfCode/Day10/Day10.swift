@@ -8,7 +8,7 @@ import AoCTools
 
 struct CircularBuffer {
     let size: Int
-    var storage: [Int]
+    private(set) var storage: [Int]
 
     init(with data: [Int]) {
         self.size = data.count
@@ -36,6 +36,7 @@ struct CircularBuffer {
 }
 
 final class Day10: AOCDay {
+    let rawInput: String
     let input: [Int]
     var buffer: CircularBuffer
 
@@ -45,6 +46,7 @@ final class Day10: AOCDay {
 
     init(rawInput: String? = nil, list: [Int]?) {
         let input = rawInput ?? Self.rawInput
+        self.rawInput = input
         self.input = input.components(separatedBy: ",").compactMap { Int($0) }
 
         if let list = list {
@@ -55,22 +57,38 @@ final class Day10: AOCDay {
     }
 
     func part1() -> Int {
-        var skip = 0
-        var position = 0
-
-        for length in input {
-            let seq = buffer.section(from: position, length: length).reversed()
-            buffer.store(Array(seq), at: position)
-
-            position += length + skip
-            skip += 1
-        }
-
-        let head = buffer.section(from: 0, length: 2)
-        return head.reduce(1, *)
+        var buffer = buffer
+        knotHash(rounds: 1, in: &buffer, lengths: input)
+        return buffer.storage[0] * buffer.storage[1]
     }
 
     func part2() -> String {
-        return ""
+        var ascii = rawInput.compactMap { Int($0.asciiValue ?? 0) }
+        ascii.append(contentsOf: [17, 31, 73, 47, 23])
+
+        knotHash(rounds: 64, in: &buffer, lengths: ascii)
+
+        var hash = [UInt8](repeating: 0, count: 16)
+        for (index, value) in buffer.storage.enumerated() {
+            hash[index / 16] ^= UInt8(value)
+        }
+        return hash.map { String(format: "%02hhx", $0) }.joined()
+    }
+
+    private func knotHash(rounds: Int,
+                          in buffer: inout CircularBuffer,
+                          lengths: [Int]) {
+        var skip = 0
+        var position = 0
+
+        for _ in 0..<rounds {
+            for length in lengths {
+                let seq = buffer.section(from: position, length: length).reversed()
+                buffer.store(Array(seq), at: position)
+
+                position += length + skip
+                skip += 1
+            }
+        }
     }
 }
