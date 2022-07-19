@@ -7,16 +7,30 @@
 import AoCTools
 
 final class Day11: AOCDay {
-    let input: String
+    let directions: [HexDirection]
     init(rawInput: String? = nil) {
-        self.input = rawInput ?? Self.rawInput
+        let input = rawInput ?? Self.rawInput
+        directions = input.components(separatedBy: ",").compactMap { Hex.FlatDirection(rawValue: $0) }
     }
 
     func part1() -> Int {
-        return 0
+        var point = Hex.Point.zero
+
+        directions.forEach {
+            point = point.move(to: $0)
+        }
+
+        return point.distance(to: .zero)
     }
 
     func part2() -> Int {
-        return 0
+        var point = Hex.Point.zero
+        var maxDistance = 0
+        directions.forEach {
+            point = point.move(to: $0)
+            maxDistance = max(maxDistance, point.distance(to: .zero))
+        }
+
+        return maxDistance
     }
 }
