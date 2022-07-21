@@ -3,12 +3,12 @@ import XCTest
 
 final class Day15Tests: XCTestCase {
     func testDay15_1() throws {
-        let day = Day15(rawInput: "foo")
-        XCTAssertEqual(day.part1(), 0)
+        let day = Day15(startA: 65, startB: 8921)
+        XCTAssertEqual(day.part1(), 588)
     }
 
     func testDay15_2() throws {
-        let day = Day15(rawInput: "bar")
-        XCTAssertEqual(day.part2(), 0)
+        let day = Day15(startA: 65, startB: 8921)
+        XCTAssertEqual(day.part2(), 309)
     }
 }
