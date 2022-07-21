@@ -8,7 +8,7 @@ final class Day14Tests: XCTestCase {
     }
 
     func testDay14_2() throws {
-        let day = Day14(rawInput: "bar")
-        XCTAssertEqual(day.part2(), 0)
+        let day = Day14(rawInput: "flqrgnkx")
+        XCTAssertEqual(day.part2(), 1242)
     }
 }
