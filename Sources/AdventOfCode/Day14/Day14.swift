@@ -13,7 +13,26 @@ final class Day14: AOCDay {
     }
 
     func part1() -> Int {
-        return 0
+        var sum = 0
+        for i in 0...127 {
+            let hash = KnotHash().rawHash(for: "\(input)-\(i)")
+            sum += bitCount(hash)
+        }
+        return sum
+    }
+
+    private func bitCount(_ bytes: [UInt8]) -> Int {
+        bytes.reduce(0) { $0 + bitCount($1) }
+    }
+
+    private func bitCount(_ byte: UInt8) -> Int {
+        var c = 0
+        var byte = byte
+        while byte != 0 {
+            byte &= byte - 1
+            c += 1
+        }
+        return c
     }
 
     func part2() -> Int {
