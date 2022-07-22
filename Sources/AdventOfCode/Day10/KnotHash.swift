@@ -7,35 +7,35 @@
 
 import Foundation
 
-struct CircularBuffer {
-    let size: Int
-    private(set) var storage: [Int]
-
-    init(with data: [Int]) {
-        self.size = data.count
-        storage = data
-    }
-
-    private func realIndex(_ index: Int) -> Int {
-        index % size
-    }
-
-    func section(from start: Int, length: Int) -> [Int] {
-        var result = [Int]()
-        for idx in start..<start+length {
-            result.append(storage[realIndex(idx)])
-        }
-        return result
-    }
-
-    mutating func store(_ data: [Int], at start: Int) {
-        for (index, value) in data.enumerated() {
-            storage[realIndex(start + index)] = value
-        }
-    }
-}
-
 class KnotHash {
+    struct CircularBuffer {
+        let size: Int
+        private(set) var storage: [Int]
+
+        init(with data: [Int]) {
+            self.size = data.count
+            storage = data
+        }
+
+        private func realIndex(_ index: Int) -> Int {
+            index % size
+        }
+
+        func section(from start: Int, length: Int) -> [Int] {
+            var result = [Int]()
+            for idx in start..<start+length {
+                result.append(storage[realIndex(idx)])
+            }
+            return result
+        }
+
+        mutating func store(_ data: [Int], at start: Int) {
+            for (index, value) in data.enumerated() {
+                storage[realIndex(start + index)] = value
+            }
+        }
+    }
+
     private(set) var buffer: CircularBuffer
 
     init(list: [Int]? = nil) {
