@@ -6,12 +6,12 @@
 
 import AoCTools
 
-private enum Direction {
+private enum SpiralDirection {
     case up, left, right, down, nextRing
 }
 
 private extension Point {
-    func next(in direction: Direction) -> Point {
+    func next(in direction: SpiralDirection) -> Point {
         var (x, y) = (self.x, self.y)
         switch direction {
         case .up: y -= 1
@@ -24,7 +24,7 @@ private extension Point {
 }
 
 private final class Spiral {
-    private var currentDirection = Direction.nextRing
+    private var currentDirection = SpiralDirection.nextRing
     private var sideLength = 1
     private var stepsTaken = 0
 
@@ -50,7 +50,7 @@ private final class Spiral {
         return current
     }
 
-    func steps(in direction: Direction) -> Int {
+    func steps(in direction: SpiralDirection) -> Int {
         switch direction {
         case .up: return sideLength - 2
         case .left, .down, .right: return sideLength - 1
