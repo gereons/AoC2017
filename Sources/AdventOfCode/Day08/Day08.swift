@@ -50,7 +50,7 @@ final class Day08: AOCDay {
     init(rawInput: String? = nil) {
         let input = rawInput ?? Self.rawInput
         instructions = input.components(separatedBy: "\n").map { Instruction($0) }
-        print(instructions)
+        // print(instructions)
     }
 
     func part1() -> Int {

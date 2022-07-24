@@ -59,7 +59,7 @@ private class FakeCircularBuffer {
 
         if position == positionOf0 + 1 {
             valueAfter0 = value
-            print(valueAfter0)
+            // print(valueAfter0)
         }
         if position < positionOf0 {
             positionOf0 += 1
