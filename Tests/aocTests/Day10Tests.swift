@@ -3,19 +3,19 @@ import XCTest
 
 final class Day10Tests: XCTestCase {
     func testBuffer() throws {
-        let cb = KnotHash.CircularBuffer(with: [0,1,2,3,4])
+        let cb = KnotHash.FixedSizeCircularBuffer(with: [0,1,2,3,4])
 
         XCTAssertEqual(cb.section(from: 0, length: 2), [0,1])
         XCTAssertEqual(cb.section(from: 3, length: 5), [3,4,0,1,2])
     }
     
     func testBufferAssign() throws {
-        var cb = KnotHash.CircularBuffer(with: [0,1,2,3,4])
+        var cb = KnotHash.FixedSizeCircularBuffer(with: [0,1,2,3,4])
 
         cb.store([9,8,7], at: 0)
         XCTAssertEqual(cb.section(from: 0, length: 5), [9,8,7,3,4])
 
-        var cb2 = KnotHash.CircularBuffer(with: [0,1,2,3,4])
+        var cb2 = KnotHash.FixedSizeCircularBuffer(with: [0,1,2,3,4])
 
         cb2.store([9,8,7], at: 4)
         XCTAssertEqual(cb2.section(from: 0, length: 5), [8,7,2,3,9])

@@ -6,35 +6,6 @@
 
 import AoCTools
 
-private class CircularBuffer {
-    private(set) var storage: [Int]
-    private(set) var current: Int
-
-    init() {
-        current = 0
-        storage = [0]
-    }
-
-    private func realIndex(_ index: Int) -> Int {
-        index % storage.count
-    }
-
-    func setNext(value: Int, after steps: Int) {
-        let position = realIndex(current + steps) + 1
-        storage.insert(value, at: position)
-        current = position
-    }
-
-    var afterCurrent: Int {
-        storage[realIndex(current + 1)]
-    }
-
-    var after0: Int {
-        let index = storage.firstIndex(of: 0)!
-        return storage[realIndex(index + 1)]
-    }
-}
-
 private class FakeCircularBuffer {
     private(set) var positionOf0: Int
     private(set) var valueAfter0: Int
@@ -74,11 +45,14 @@ final class Day17: AOCDay {
     }
 
     func part1() -> Int {
-        let cb = CircularBuffer()
+        let cb = CircularBuffer<Int>()
+        cb.insert(value: 0)
         for i in 1 ... 2017 {
-            cb.setNext(value: i, after: steps)
+            cb.moveCurrent(by: steps)
+            cb.insert(value: i)
         }
-        return cb.afterCurrent
+        cb.moveCurrent(by: 1)
+        return cb.value()
     }
 
     func part2() -> Int {

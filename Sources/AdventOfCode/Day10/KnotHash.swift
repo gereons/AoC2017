@@ -8,7 +8,7 @@
 import Foundation
 
 class KnotHash {
-    struct CircularBuffer {
+    struct FixedSizeCircularBuffer {
         let size: Int
         private(set) var storage: [Int]
 
@@ -36,10 +36,10 @@ class KnotHash {
         }
     }
 
-    private(set) var buffer: CircularBuffer
+    private(set) var buffer: FixedSizeCircularBuffer
 
     init(list: [Int]? = nil) {
-        self.buffer = CircularBuffer(with: list ?? [Int](0..<256))
+        self.buffer = FixedSizeCircularBuffer(with: list ?? [Int](0..<256))
     }
 
     func rawHash(for string: String) -> [UInt8] {
@@ -72,7 +72,7 @@ class KnotHash {
     }
 
     private func knot(rounds: Int,
-                      in buffer: inout CircularBuffer,
+                      in buffer: inout FixedSizeCircularBuffer,
                       lengths: [Int]) {
         var skip = 0
         var position = 0

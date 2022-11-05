@@ -31,9 +31,4 @@ In state B:
         let day = Day25(rawInput: blueprint)
         XCTAssertEqual(day.part1(), 3)
     }
-
-    func testDay25_2() throws {
-        let day = Day25(rawInput: "bar")
-        XCTAssertEqual(day.part2(), 0)
-    }
 }

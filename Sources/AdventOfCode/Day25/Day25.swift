@@ -95,7 +95,7 @@ private class TuringMachine {
 
         let start = Regex(pattern: #"Begin in state (.*)."#)
         startState = start.matches(in: lines[0]).first!
-        let steps = Regex(pattern: #"Perform a diagnostic checksum after (\d*) steps"#)
+        let steps = Regex(pattern: #"Perform a diagnostic checksum after (\d*) steps."#)
         self.steps = Int(steps.matches(in: lines[1]).first!)!
 
         var states = [State]()
