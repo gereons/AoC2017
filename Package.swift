@@ -22,7 +22,8 @@ let package = Package(
             dependencies: [
                 // .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "AoCTools", package: "AoCTools")
-            ]),
+            ],
+            path: "Sources"),
         .testTarget(
             name: "aocTests",
             dependencies: [ "AdventOfCode" ])
