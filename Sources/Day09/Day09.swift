@@ -9,8 +9,8 @@ import AoCTools
 final class Day09: AOCDay {
     let input: String
     private var result: (Int, Int)?
-    init(rawInput: String? = nil) {
-        self.input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        self.input = input ?? Self.input
     }
 
     typealias Node = TreeNode<Void>

@@ -22,14 +22,14 @@ final class Day10Tests: XCTestCase {
     }
 
     func testDay10_1() throws {
-        let day = Day10(rawInput: "3,4,1,5", list: [0,1,2,3,4])
+        let day = Day10(input: "3,4,1,5", list: [0,1,2,3,4])
         XCTAssertEqual(day.part1(), 12)
     }
 
     func testDay10_2() throws {
-        XCTAssertEqual(Day10(rawInput: "").part2(), "a2582a3a0e66e6e86e3812dcb672a272")
-        XCTAssertEqual(Day10(rawInput: "AoC 2017").part2(), "33efeb34ea91902bb2f59c9920caa6cd")
-        XCTAssertEqual(Day10(rawInput: "1,2,3").part2(), "3efbe78a8d82f29979031a4aa0b16a9d")
-        XCTAssertEqual(Day10(rawInput: "1,2,4").part2(), "63960835bcdc130f0b66d7ff4f6a5a8e")
+        XCTAssertEqual(Day10(input: "").part2(), "a2582a3a0e66e6e86e3812dcb672a272")
+        XCTAssertEqual(Day10(input: "AoC 2017").part2(), "33efeb34ea91902bb2f59c9920caa6cd")
+        XCTAssertEqual(Day10(input: "1,2,3").part2(), "3efbe78a8d82f29979031a4aa0b16a9d")
+        XCTAssertEqual(Day10(input: "1,2,4").part2(), "63960835bcdc130f0b66d7ff4f6a5a8e")
     }
 }

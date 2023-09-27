@@ -40,8 +40,8 @@ private class FakeCircularBuffer {
 
 final class Day17: AOCDay {
     let steps: Int
-    init(rawInput: String? = nil) {
-        self.steps = Int(rawInput ?? Self.rawInput)!
+    init(input: String? = nil) {
+        self.steps = Int(input ?? Self.input)!
     }
 
     func part1() -> Int {

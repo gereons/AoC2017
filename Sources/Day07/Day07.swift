@@ -58,8 +58,8 @@ final class Day07: AOCDay {
     private let programs: [Program]
     private var root: Node?
 
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         programs = input.components(separatedBy: "\n").map { Program($0) }
     }
 

@@ -10,12 +10,12 @@ final class Day13Tests: XCTestCase {
     """
 
     func testDay13_1() throws {
-        let day = Day13(rawInput: test)
+        let day = Day13(input: test)
         XCTAssertEqual(day.part1(), 24)
     }
 
     func testDay13_2() throws {
-        let day = Day13(rawInput: test)
+        let day = Day13(input: test)
         XCTAssertEqual(day.part2(), 10)
     }
 }

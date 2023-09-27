@@ -33,8 +33,8 @@ final class Day13: AOCDay {
     let firewalls: [Int: Firewall]
     let maxDepth: Int
 
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         let firewalls = input.components(separatedBy: "\n").map { Firewall($0) }
 
         self.firewalls = Dictionary(uniqueKeysWithValues: zip(firewalls.map { $0.depth }, firewalls))

@@ -73,8 +73,8 @@ private final class Spiral {
 
 final class Day03: AOCDay {
     let input: Int
-    init(rawInput: String? = nil) {
-        self.input = Int(rawInput ?? Self.rawInput) ?? 0
+    init(input: String? = nil) {
+        self.input = Int(input ?? Self.input) ?? 0
     }
 
     func part1() -> Int {

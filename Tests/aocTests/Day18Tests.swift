@@ -15,7 +15,7 @@ final class Day18Tests: XCTestCase {
         set a 1
         jgz a -2
         """
-        let day = Day18(rawInput: program)
+        let day = Day18(input: program)
         XCTAssertEqual(day.part1(), 4)
     }
 
@@ -29,7 +29,7 @@ final class Day18Tests: XCTestCase {
         rcv c
         rcv d
         """
-        let day = Day18(rawInput: program)
+        let day = Day18(input: program)
         XCTAssertEqual(day.part2(), 3)
     }
 }

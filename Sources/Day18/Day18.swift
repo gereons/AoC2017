@@ -179,8 +179,8 @@ class Tablet {
 
 final class Day18: AOCDay {
     private let program: [Instruction]
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         program = input.components(separatedBy: "\n").map { Instruction($0) }
     }
 

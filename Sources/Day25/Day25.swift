@@ -129,8 +129,8 @@ private class TuringMachine {
 
 final class Day25: AOCDay {
     private let turingMachine: TuringMachine
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
 
         turingMachine = TuringMachine(input)
     }

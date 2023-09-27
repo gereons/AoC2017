@@ -6,8 +6,8 @@
 
 import AoCTools
 
-extension Point.Direction {
-    var opposite: Point.Direction {
+extension Direction {
+    var opposite: Direction {
         switch self {
         case .n: return .s
         case .s: return .n
@@ -50,14 +50,14 @@ private enum PathPoint {
 
 struct Step {
     let point: Point
-    let direction: Point.Direction
+    let direction: Direction
 }
 
 final class Day19: AOCDay {
     private var points = [Point: PathPoint]()
 
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         for (y, line) in input.components(separatedBy: "\n").enumerated() {
             for (x, ch) in line.enumerated() {
                 points[Point(x,y)] = PathPoint(ch)
@@ -92,7 +92,7 @@ final class Day19: AOCDay {
             }
             return nil
         } else {
-            for dir in Point.Direction.orthogonal where dir != step.direction.opposite {
+            for dir in Direction.orthogonal where dir != step.direction.opposite {
                 let next = step.point + dir.offset
                 if points[next] != nil {
                     return Step(point: next, direction: dir)

@@ -28,7 +28,7 @@ In state B:
 """
 
     func testDay25_1() throws {
-        let day = Day25(rawInput: blueprint)
+        let day = Day25(input: blueprint)
         XCTAssertEqual(day.part1(), 3)
     }
 }

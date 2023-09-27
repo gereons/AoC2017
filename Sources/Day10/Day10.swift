@@ -9,27 +9,24 @@ import AoCTools
 
 final class Day10: AOCDay {
     let rawInput: String
-    let input: [Int]
+    let ints: [Int]
     let knotHash: KnotHash
 
-    convenience init(rawInput: String? = nil) {
-        self.init(rawInput: rawInput, list: nil)
+    convenience init(input: String? = nil) {
+        self.init(input: input, list: nil)
     }
 
-    init(rawInput: String? = nil, list: [Int]?) {
-        let input = rawInput ?? Self.rawInput
-        self.rawInput = input
-        self.input = input.components(separatedBy: ",").compactMap { Int($0) }
+    init(input: String? = nil, list: [Int]?) {
+        let input = input ?? Self.input
 
-        if let list = list {
-            knotHash = KnotHash(list: list)
-        } else {
-            knotHash = KnotHash()
-        }
+        ints = input.components(separatedBy: ",").compactMap { Int($0) }
+        rawInput = input
+
+        knotHash = KnotHash(list: list)
     }
 
     func part1() -> Int {
-        knotHash.performRound(for: input)
+        knotHash.performRound(for: ints)
         return knotHash.buffer.storage[0] * knotHash.buffer.storage[1]
     }
 

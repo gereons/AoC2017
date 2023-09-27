@@ -19,12 +19,12 @@ cntj (57)
 """
 
     func testDay07_1() throws {
-        let day = Day07(rawInput: input)
+        let day = Day07(input: input)
         XCTAssertEqual(day.part1(), "tknk")
     }
 
     func testDay07_2() throws {
-        let day = Day07(rawInput: input)
+        let day = Day07(input: input)
         XCTAssertEqual(day.part2(), 60)
     }
 }

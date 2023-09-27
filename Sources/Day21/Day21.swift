@@ -108,8 +108,8 @@ extension Array where Element == Grid {
 final class Day21: AOCDay {
     private let transformations: [Grid: Grid]
 
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
 
         var xforms = [Grid: Grid]()
         for line in input.components(separatedBy: "\n") {

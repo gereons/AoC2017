@@ -10,7 +10,7 @@ final class Day05Tests: XCTestCase {
             1
             -3
             """
-        let day = Day05(rawInput: input)
+        let day = Day05(input: input)
         XCTAssertEqual(day.part1(), 5)
     }
 
@@ -22,7 +22,7 @@ final class Day05Tests: XCTestCase {
             1
             -3
             """
-        let day = Day05(rawInput: input)
+        let day = Day05(input: input)
         XCTAssertEqual(day.part2(), 10)
     }
 }

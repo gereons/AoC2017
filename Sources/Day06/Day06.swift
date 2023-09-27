@@ -7,10 +7,10 @@
 import AoCTools
 
 final class Day06: AOCDay {
-    let input: [Int]
-    init(rawInput: String? = nil) {
-        let rawInput = rawInput ?? Self.rawInput
-        input = rawInput.components(separatedBy: .whitespaces).compactMap { Int($0) }
+    let ints: [Int]
+    init(input: String? = nil) {
+        let input = input ?? Self.input
+        ints = input.components(separatedBy: .whitespaces).compactMap { Int($0) }
     }
 
     private var solution: (steps: Int, firstSeen: Int)?
@@ -31,7 +31,7 @@ final class Day06: AOCDay {
 
     private func redistribute() -> (Int, Int) {
         var seen = [[Int]: Int]()
-        var blocks = input
+        var blocks = ints
         seen[blocks] = 0
         var steps = 0
 

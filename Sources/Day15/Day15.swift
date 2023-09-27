@@ -38,7 +38,7 @@ final class Day15: AOCDay {
     let startA: Int
     let startB: Int
 
-    init(rawInput: String? = nil) {
+    init(input: String? = nil) {
         startA = 277
         startB = 349
     }

@@ -78,8 +78,8 @@ class Bridge {
 
 final class Day24: AOCDay {
     let components: [Component]
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         components = input.components(separatedBy: "\n").map { Component($0) }
     }
 

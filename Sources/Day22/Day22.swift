@@ -11,8 +11,8 @@ enum TurnDirection {
     case left // counterclockwise
 }
 
-extension Point.Direction {
-    static let turns: [TurnDirection: [Point.Direction: Point.Direction]] = [
+extension Direction {
+    static let turns: [TurnDirection: [Direction: Direction]] = [
         .right: [
             .n: .e,
             .e: .s,
@@ -26,7 +26,7 @@ extension Point.Direction {
             .w: .s
         ]
     ]
-    func turn(_ direction: TurnDirection) -> Point.Direction {
+    func turn(_ direction: TurnDirection) -> Direction {
         Self.turns[direction]![self]!
     }
 }
@@ -40,8 +40,8 @@ enum NodeState {
 
 final class Day22: AOCDay {
     let grid: [Point: NodeState]
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
         var grid = [Point: NodeState]()
         for (y, line) in input.components(separatedBy: "\n").enumerated() {
             for (x, char) in line.enumerated() {
@@ -62,7 +62,7 @@ final class Day22: AOCDay {
         var grid = grid
         let start = Point(maxX/2, maxY/2)
         var current = start
-        var direction = Point.Direction.n
+        var direction = Direction.n
 
         var infections = 0
 
@@ -97,7 +97,7 @@ final class Day22: AOCDay {
         var grid = grid
         let start = Point(maxX/2, maxY/2)
         var current = start
-        var direction = Point.Direction.n
+        var direction = Direction.n
 
         var infections = 0
 

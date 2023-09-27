@@ -20,8 +20,8 @@ private struct Program {
 
 final class Day12: AOCDay {
     private let programs: [Int: Program]
-    init(rawInput: String? = nil) {
-        let input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        let input = input ?? Self.input
 
         let programs = input.components(separatedBy: "\n").map { Program($0) }
         self.programs = Dictionary(uniqueKeysWithValues: zip(programs.map { $0.id }, programs))

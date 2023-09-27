@@ -10,8 +10,8 @@ final class Day01: AOCDay {
     let input: String
     let digits: [Int]
 
-    init(rawInput: String? = nil) {
-        self.input = rawInput ?? Self.rawInput
+    init(input: String? = nil) {
+        self.input = input ?? Self.input
         self.digits = self.input.compactMap { Int(String($0)) }
     }
 
