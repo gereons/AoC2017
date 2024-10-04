@@ -104,8 +104,8 @@ private class CPUV2 {
 
 final class Day23: AOCDay {
     private let program: [Instruction]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         program = input.components(separatedBy: "\n").map { Instruction($0) }
     }
 

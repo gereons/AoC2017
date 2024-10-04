@@ -54,7 +54,7 @@ private class TuringMachine {
     }
 
     struct State {
-        static let regexes = [
+        nonisolated(unsafe) static let regexes = [
             Regex(pattern: #"In state (.*):"#),
             Regex(pattern: #"  If the current value is (\d*):"#),
             Regex(pattern: #"    - Write the value (\d*)."#),
@@ -129,9 +129,8 @@ private class TuringMachine {
 
 final class Day25: AOCDay {
     private let turingMachine: TuringMachine
-    init(input: String? = nil) {
-        let input = input ?? Self.input
 
+    init(input: String) {
         turingMachine = TuringMachine(input)
     }
 

@@ -7,13 +7,11 @@
 import AoCTools
 
 final class Day02: AOCDay {
-    let input: String
     var data: [[Int]]
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
 
+    init(input: String) {
         var data = [[Int]]()
-        let lines = self.input.components(separatedBy: "\n")
+        let lines = input.components(separatedBy: "\n")
         for line in lines {
             let numbers = line.components(separatedBy: .whitespaces)
             let ints = numbers.compactMap { Int($0) }

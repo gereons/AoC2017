@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day03Tests: XCTestCase {
     func testDay03_1() throws {
 //        17  16  15  14  13

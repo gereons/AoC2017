@@ -7,12 +7,10 @@
 import AoCTools
 
 final class Day01: AOCDay {
-    let input: String
     let digits: [Int]
 
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
-        self.digits = self.input.compactMap { Int(String($0)) }
+    init(input: String) {
+        self.digits = input.compactMap { Int(String($0)) }
     }
 
     func part1() -> Int {

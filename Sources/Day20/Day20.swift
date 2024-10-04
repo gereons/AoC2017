@@ -46,8 +46,8 @@ struct Particle {
 
 final class Day20: AOCDay {
     let particles: [Particle]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         particles = input.components(separatedBy: "\n").enumerated().map { Particle(id: $0, $1) }
     }
 

@@ -56,8 +56,7 @@ struct Step {
 final class Day19: AOCDay {
     private var points = [Point: PathPoint]()
 
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+    init(input: String) {
         for (y, line) in input.components(separatedBy: "\n").enumerated() {
             for (x, ch) in line.enumerated() {
                 points[Point(x,y)] = PathPoint(ch)

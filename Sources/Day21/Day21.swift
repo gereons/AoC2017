@@ -5,6 +5,7 @@
 //
 
 import AoCTools
+import Algorithms
 import Foundation
 
 private struct Grid: Hashable {
@@ -49,19 +50,22 @@ private struct Grid: Hashable {
     }
 
     func rows(ofSize size: Int) -> [Grid] {
-        grid.chunked(size).map { Grid(grid: $0) }
+        grid
+            .chunks(ofCount: size)
+            .map { Grid(grid: Array($0)) }
     }
 
     func columns(ofSize size: Int) -> [Grid] {
         let chunked = grid.map { row in
-            row.chunked(size)
+            row.chunks(ofCount: size).map { Array($0) }
         }
 
         return (0..<chunked[0].count).map { x in
             (0..<chunked.count).map { y in
                 chunked[y][x]
             }
-        }.map { Grid(grid: $0) }
+        }
+        .map { Grid(grid: Array($0)) }
     }
 
     func split(size: Int) -> [Grid] {
@@ -92,11 +96,11 @@ private struct Grid: Hashable {
     }
 }
 
-extension Array where Element == Grid {
+fileprivate extension Array where Element == Grid {
     func join() -> Grid {
         let rows = Int(sqrt(Double(count)))
 
-        let chunks = chunked(rows)
+        let chunks = chunks(ofCount: rows)
         return chunks
             .map { row in
                 row.reduce(.zero) { $0.add($1) }
@@ -108,9 +112,7 @@ extension Array where Element == Grid {
 final class Day21: AOCDay {
     private let transformations: [Grid: Grid]
 
-    init(input: String? = nil) {
-        let input = input ?? Self.input
-
+    init(input: String) {
         var xforms = [Grid: Grid]()
         for line in input.components(separatedBy: "\n") {
             let parts = line.components(separatedBy: " => ")

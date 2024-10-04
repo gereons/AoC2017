@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day12Tests: XCTestCase {
     let test = """
     0 <-> 2

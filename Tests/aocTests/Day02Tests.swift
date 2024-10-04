@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day02Tests: XCTestCase {
     let input1 = """
         5 1 9 5

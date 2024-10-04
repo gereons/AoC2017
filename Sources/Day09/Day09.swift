@@ -7,10 +7,11 @@
 import AoCTools
 
 final class Day09: AOCDay {
-    let input: String
+    let rawInput: String
     private var result: (Int, Int)?
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
+
+    init(input: String) {
+        self.rawInput = input
     }
 
     typealias Node = TreeNode<Void>
@@ -31,7 +32,7 @@ final class Day09: AOCDay {
         var inGroup = 0
         var inGarbage = false
         var isEscaped = false
-        for ch in input {
+        for ch in rawInput {
             if isEscaped {
                 isEscaped = false
                 continue

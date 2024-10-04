@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day19Tests: XCTestCase {
     let path = """
      |

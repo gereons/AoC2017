@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day25Tests: XCTestCase {
     let blueprint = """
 Begin in state A.

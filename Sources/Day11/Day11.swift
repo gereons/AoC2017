@@ -8,8 +8,8 @@ import AoCTools
 
 final class Day11: AOCDay {
     let directions: [HexDirection]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         directions = input.components(separatedBy: ",").compactMap { Hex.FlatDirection(rawValue: $0) }
     }
 

@@ -7,13 +7,11 @@
 import AoCTools
 
 final class Day04: AOCDay {
-    let input: String
     let data: [[String]]
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
 
+    init(input: String) {
         var data = [[String]]()
-        let lines = self.input.components(separatedBy: "\n")
+        let lines = input.components(separatedBy: "\n")
         for line in lines {
             let words = line.components(separatedBy: " ")
             data.append(words)

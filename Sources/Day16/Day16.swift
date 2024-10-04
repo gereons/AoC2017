@@ -31,13 +31,12 @@ final class Day16: AOCDay {
     let programs: [Character]
     let dance: [DanceMove]
 
-    convenience init(input: String? = nil) {
+    convenience init(input: String) {
         self.init(input: input, programs: nil)
     }
 
-    init(input: String? = nil, programs: String? = nil) {
+    init(input: String, programs: String? = nil) {
         self.programs = (programs ?? "abcdefghijklmnop").map { $0 }
-        let input = input ?? Self.input
         self.dance = input.components(separatedBy: ",").map { DanceMove($0) }
     }
 

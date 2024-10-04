@@ -7,15 +7,16 @@
 import AoCTools
 
 final class Day14: AOCDay {
-    let input: String
-    init(input: String? = nil) {
-        self.input = input ?? Self.input
+    let rawInput: String
+
+    init(input: String) {
+        self.rawInput = input
     }
 
     func part1() -> Int {
         var sum = 0
         for i in 0...127 {
-            let hash = KnotHash().rawHash(for: "\(input)-\(i)")
+            let hash = KnotHash().rawHash(for: "\(rawInput)-\(i)")
             sum += bitCount(hash)
         }
         return sum
@@ -39,7 +40,7 @@ final class Day14: AOCDay {
         var grid = [Point: Bool]()
 
         for y in 0...127 {
-            let hash = KnotHash().rawHash(for: "\(input)-\(y)")
+            let hash = KnotHash().rawHash(for: "\(rawInput)-\(y)")
             makePoints(from: hash, in: &grid, at: y)
         }
 
@@ -66,7 +67,7 @@ final class Day14: AOCDay {
         if seen.contains(start) { return }
         seen.insert(start)
 
-        for n in start.neighbors(adjacency: .orthogonal) {
+        for n in start.neighbors(adjacency: .cardinal) {
             if grid[n] == true {
                 findRegion(in: grid, startAt: n, seen: &seen)
             }

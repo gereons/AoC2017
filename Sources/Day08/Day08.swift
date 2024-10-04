@@ -47,8 +47,8 @@ private struct Instruction {
 
 final class Day08: AOCDay {
     private let instructions: [Instruction]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         instructions = input.components(separatedBy: "\n").map { Instruction($0) }
         // print(instructions)
     }

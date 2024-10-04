@@ -8,8 +8,8 @@ import AoCTools
 
 final class Day06: AOCDay {
     let ints: [Int]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         ints = input.components(separatedBy: .whitespaces).compactMap { Int($0) }
     }
 

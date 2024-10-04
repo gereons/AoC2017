@@ -1,6 +1,7 @@
 import XCTest
 @testable import AdventOfCode
 
+@MainActor
 final class Day10Tests: XCTestCase {
     func testBuffer() throws {
         let cb = KnotHash.FixedSizeCircularBuffer(with: [0,1,2,3,4])

@@ -40,8 +40,8 @@ enum NodeState {
 
 final class Day22: AOCDay {
     let grid: [Point: NodeState]
-    init(input: String? = nil) {
-        let input = input ?? Self.input
+
+    init(input: String) {
         var grid = [Point: NodeState]()
         for (y, line) in input.components(separatedBy: "\n").enumerated() {
             for (x, char) in line.enumerated() {

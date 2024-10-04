@@ -6,19 +6,16 @@
 
 import AoCTools
 
-
 final class Day10: AOCDay {
     let rawInput: String
     let ints: [Int]
     let knotHash: KnotHash
 
-    convenience init(input: String? = nil) {
+    convenience init(input: String) {
         self.init(input: input, list: nil)
     }
 
-    init(input: String? = nil, list: [Int]?) {
-        let input = input ?? Self.input
-
+    init(input: String, list: [Int]?) {
         ints = input.components(separatedBy: ",").compactMap { Int($0) }
         rawInput = input
 
