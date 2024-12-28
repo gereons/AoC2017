@@ -7,7 +7,7 @@
 import AoCTools
 
 final class Day11: AOCDay {
-    let directions: [HexDirection]
+    let directions: [Hex.FlatDirection]
 
     init(input: String) {
         directions = input.components(separatedBy: ",").compactMap { Hex.FlatDirection(rawValue: $0) }
@@ -17,7 +17,7 @@ final class Day11: AOCDay {
         var point = Hex.Point.zero
 
         directions.forEach {
-            point = point.move(to: $0)
+            point = point.moved(to: $0)
         }
 
         return point.distance(to: .zero)
@@ -27,7 +27,7 @@ final class Day11: AOCDay {
         var point = Hex.Point.zero
         var maxDistance = 0
         directions.forEach {
-            point = point.move(to: $0)
+            point = point.moved(to: $0)
             maxDistance = max(maxDistance, point.distance(to: .zero))
         }
 
