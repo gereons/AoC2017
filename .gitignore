@@ -3,4 +3,4 @@
 /Packages
 /*.xcodeproj
 .swiftpm
-Sources/Day*/Day*input.swift
+Sources/Inputs/Day*input.swift
