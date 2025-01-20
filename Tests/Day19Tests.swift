@@ -1,8 +1,8 @@
-import XCTest
+import Testing
 @testable import AdventOfCode
 
 @MainActor
-final class Day19Tests: XCTestCase {
+@Suite struct Day19Tests {
     let path = """
      |
      |  +--+
@@ -13,14 +13,14 @@ final class Day19Tests: XCTestCase {
 
 """
     
-    func testDay19_1() throws {
+    @Test func testDay19_part1() throws {
 
         let day = Day19(input: path)
-        XCTAssertEqual(day.part1(), "ABCDEF")
+        #expect(day.part1() == "ABCDEF")
     }
 
-    func testDay19_2() throws {
+    @Test func testDay19_part2() throws {
         let day = Day19(input: path)
-        XCTAssertEqual(day.part2(), 38)
+        #expect(day.part2() == 38)
     }
 }

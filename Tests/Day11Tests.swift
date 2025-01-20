@@ -1,20 +1,20 @@
-import XCTest
+import Testing
 @testable import AdventOfCode
 
 @MainActor
-final class Day11Tests: XCTestCase {
-    func testDay11_1() throws {
-        XCTAssertEqual(Day11(input: "ne").part1(), 1)
-        XCTAssertEqual(Day11(input: "ne,ne,ne").part1(), 3)
-        XCTAssertEqual(Day11(input: "ne,ne,sw,sw").part1(), 0)
-        XCTAssertEqual(Day11(input: "ne,ne,s,s").part1(), 2)
-        XCTAssertEqual(Day11(input: "se,se").part1(), 2)
-        XCTAssertEqual(Day11(input: "se,sw,se,sw,sw").part1(), 3)
-        XCTAssertEqual(Day11(input: "s,s,sw").part1(), 3)
+@Suite struct Day11Tests {
+    @Test func testDay11_part1() throws {
+        #expect(Day11(input: "ne").part1() == 1)
+        #expect(Day11(input: "ne,ne,ne").part1() == 3)
+        #expect(Day11(input: "ne,ne,sw,sw").part1() == 0)
+        #expect(Day11(input: "ne,ne,s,s").part1() == 2)
+        #expect(Day11(input: "se,se").part1() == 2)
+        #expect(Day11(input: "se,sw,se,sw,sw").part1() == 3)
+        #expect(Day11(input: "s,s,sw").part1() == 3)
     }
 
-    func testDay11_2() throws {
+    @Test func testDay11_part2() throws {
         let day = Day11(input: "bar")
-        XCTAssertEqual(day.part2(), 0)
+        #expect(day.part2() == 0)
     }
 }

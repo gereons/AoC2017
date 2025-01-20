@@ -1,9 +1,9 @@
-import XCTest
+import Testing
 @testable import AdventOfCode
 
 @MainActor
-final class Day18Tests: XCTestCase {
-    func testDay18_1() throws {
+@Suite struct Day18Tests {
+    @Test func testDay18_part1() throws {
         let program = """
         set a 1
         add a 2
@@ -17,10 +17,10 @@ final class Day18Tests: XCTestCase {
         jgz a -2
         """
         let day = Day18(input: program)
-        XCTAssertEqual(day.part1(), 4)
+        #expect(day.part1() == 4)
     }
 
-    func testDay18_2() throws {
+    @Test func testDay18_part2() throws {
         let program = """
         snd 1
         snd 2
@@ -31,6 +31,6 @@ final class Day18Tests: XCTestCase {
         rcv d
         """
         let day = Day18(input: program)
-        XCTAssertEqual(day.part2(), 3)
+        #expect(day.part2() == 3)
     }
 }

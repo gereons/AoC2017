@@ -1,8 +1,8 @@
-import XCTest
+import Testing
 @testable import AdventOfCode
 
 @MainActor
-final class Day25Tests: XCTestCase {
+@Suite struct Day25Tests {
     let blueprint = """
 Begin in state A.
 Perform a diagnostic checksum after 6 steps.
@@ -28,8 +28,8 @@ In state B:
     - Continue with state A.
 """
 
-    func testDay25_1() throws {
+    @Test func testDay25_part1() throws {
         let day = Day25(input: blueprint)
-        XCTAssertEqual(day.part1(), 3)
+        #expect(day.part1() == 3)
     }
 }

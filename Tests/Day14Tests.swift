@@ -1,15 +1,15 @@
-import XCTest
+import Testing
 @testable import AdventOfCode
 
 @MainActor
-final class Day14Tests: XCTestCase {
-    func testDay14_1() throws {
+@Suite struct Day14Tests {
+    @Test func testDay14_part1() throws {
         let day = Day14(input: "flqrgnkx")
-        XCTAssertEqual(day.part1(), 8108)
+        #expect(day.part1() == 8108)
     }
 
-    func testDay14_2() throws {
+    @Test func testDay14_part2() throws {
         let day = Day14(input: "flqrgnkx")
-        XCTAssertEqual(day.part2(), 1242)
+        #expect(day.part2() == 1242)
     }
 }
