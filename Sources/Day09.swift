@@ -6,7 +6,7 @@
 
 import AoCTools
 
-final class Day09: AdventOfCodeDay {
+final class Day09: AdventOfCodeDay, @unchecked Sendable {
     let title = "Stream Processing"
     let rawInput: String
     private var result: (Int, Int)?

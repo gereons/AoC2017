@@ -6,7 +6,7 @@
 
 import AoCTools
 
-class Firewall {
+final class Firewall: Sendable {
     let depth: Int
     let range: Int
     private let scannerPositions: [Int]

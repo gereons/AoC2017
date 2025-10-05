@@ -53,7 +53,7 @@ struct Step {
     let direction: Direction
 }
 
-final class Day19: AdventOfCodeDay {
+final class Day19: AdventOfCodeDay, @unchecked Sendable {
     let title = "A Series of Tubes"
     private var points = [Point: PathPoint]()
 

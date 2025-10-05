@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KnotHash {
+final class KnotHash: @unchecked Sendable {
     struct FixedSizeCircularBuffer {
         let size: Int
         private(set) var storage: [Int]

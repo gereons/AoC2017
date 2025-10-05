@@ -54,7 +54,7 @@ extension Node {
     }
 }
 
-final class Day07: AdventOfCodeDay {
+final class Day07: AdventOfCodeDay, @unchecked Sendable {
     let title = "Recursive Circus"
     private let programs: [Program]
     private var root: Node?

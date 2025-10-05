@@ -6,7 +6,7 @@
 
 import AoCTools
 
-final class Day06: AdventOfCodeDay {
+final class Day06: AdventOfCodeDay, @unchecked Sendable {
     let title = "Memory Reallocation"
     let ints: [Int]
 

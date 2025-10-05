@@ -31,7 +31,7 @@ import AoCTools
  - Continue with state A.
  */
 
-private class TuringMachine {
+private final class TuringMachine: @unchecked Sendable {
     let startState: String
     let steps: Int
     let states: [State]

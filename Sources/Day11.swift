@@ -6,7 +6,7 @@
 
 import AoCTools
 
-final class Day11: AdventOfCodeDay {
+final class Day11: AdventOfCodeDay, @unchecked Sendable {
     let title = "Hex Ed"
     let directions: [Hex.FlatDirection]
 
